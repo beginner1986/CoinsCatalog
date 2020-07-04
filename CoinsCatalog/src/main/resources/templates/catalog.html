@@ -34,7 +34,7 @@
 		        	<hr>
 		        	<div class="row">
 			        	<img th:src="@{https://katalogfischer.pl/} + ${coin.photo}" class="col-sm-4 h-100"/>
-			        	<div class="col-sm-4">
+			        	<div class="col-sm-4 column">
 			        		<div>Kod: <strong th:text="${coin.code}"></strong></div>
 			        		<div>Rok: <strong th:text="${coin.year}"></strong></div>
 			        		<div>Średnica: <strong th:text="${coin.diameter}"></strong></div>
@@ -42,7 +42,7 @@
 			        		<div>Napis: <strong th:text="${coin.inscription}"></strong></div>
 			        		<div>Nakład: <strong th:text="${coin.circulation}"></strong></div>
 			        	</div>
-			        	<div class="col-sm-4">
+			        	<div class="col-sm-4 column">
 			        		<div>Metal: <strong th:text="${coin.metal}"></strong></div>
 			        		<div>Próba: <strong th:text="${coin.fineness}"></strong></div>
 			        		<div>Waga: <strong th:text="${coin.weight}"></strong></div>
