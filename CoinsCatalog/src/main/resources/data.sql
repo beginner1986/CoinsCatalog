@@ -1,3 +1,12 @@
+-- test user
+INSERT INTO users (name) VALUES ('user');
+	
+-- test data set
+INSERT INTO collections (user_id, coin_id, comment) VALUES
+	(1, 1, 'UNC'),
+	(1, 2, 'AU');
+
+-- coins database population
 INSERT INTO coins (name, code, year, diameter, shape, inscription, circulation, metal, fineness, weight, stamp, border, comment, photo) VALUES
 	('1 GROSZ', 'OB 001 ', '1923 ', '14,7 mm ', 'koło ', '', '30 000 000', 'B ', '', '1,5 g ', 'zwykły', '', '', '/S,2754,85df3,1-grosz.jpg'),
 	('1 GROSZ', 'OB 001 ', '1925 ', '14,7 mm ', 'koło ', '', '40 000 000', 'B ', '', '1,5 g ', 'zwykły', '', '', '/S,2755,aad3c,1-grosz.jpg'),
