@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>KATALOG MONET</title>
+
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+
+<body class="container">
+    <div class="col-sm-10">
+    <!-- 
+    	<header class="row logout">
+    		<form method="post" th:action="@{/logout}">
+    			<input type="submit" value="WYLOGUJ" class="btn btn-primary stretched-link"> 
+    		</form>
+    	</header>
+     -->
+
+    	<div class="row">
+        	<h2 class="col-sm-12">KATALOG MONET</h2><br/>
+		</div>
+
+        <br/><br/>
+		<div class="row">
+	        <table class="table table-striped">
+	        <thead>
+		        <tr>
+		        	<td>Lp.</td>
+		            <td>Nazwa</td>
+		            <td>Kod</td>
+		            <td>Rok</td>
+		            <td>Średnica</td>
+		            <td>Kształt</td>
+		            <td>Napis</td>
+		            <td>Nakład</td>
+		            <td>Metal</td>
+		            <td>Próba</td>
+		            <td>Waga</td>
+		            <td>Stępel</td>
+		            <td>Obrzeże</td>
+		            <td>Komentarz</td>
+		            <td>Zdjęcie</td>
+		        </tr>
+		    </thead>
+
+		    <tbody th:if="${ not #lists.isEmpty(coins) }">
+		        <tr th:each="coin : ${coins}">
+		        	<td th:text="${coin.id}"></td>
+		            <td th:text="${coin.name}"></td>
+		            <td th:text="${coin.code}"></td>
+		            <td th:text="${coin.year}"></td>
+		            <td th:text="${coin.diameter}"></td>
+		            <td th:text="${coin.shape}"></td>
+		            <td th:text="${coin.inscription}"></td>
+		            <td th:text="${coin.circulation}"></td>
+		            <td th:text="${coin.metal}"></td>
+		            <td th:text="${coin.fineness}"></td>
+		            <td th:text="${coin.weight}"></td>
+		            <td th:text="${coin.stamp}"></td>
+		            <td th:text="${coin.border}"></td>
+		            <td th:text="${coin.comment}"></td>
+		            <td><img th:src="@{https://katalogfischer.pl/} + ${coin.photo}"/></td>
+		        </tr>
+		    </tbody>
+	    </table>
+	</div>
+
+	<!-- 
+	<br/><br/>
+	<footer class="row justify-content-sm-center">
+        <a th:href="@{'/user/addUserPage'}" class="col-sm-3 btn btn-primary stretched-link">Dodaj użytkownika</a><br/>
+        <a th:href="@{'/'}" class="col-sm-3 btn btn-primary stretched-link">Strona główna</a>
+	</footer>
+	 -->
+	</div>
+</body>
+</html> 

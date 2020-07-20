@@ -28,4 +28,15 @@ public class CatalogController {
 		
 		return "catalog";
 	}
+	
+	@GetMapping("/table")
+	public String table(Model model) {
+		
+		log.info("Catalog in table view visited.");
+		
+		List<Coin> coins = repository.findAll();
+		model.addAttribute("coins", coins);
+		
+		return "table";
+	}
 }
