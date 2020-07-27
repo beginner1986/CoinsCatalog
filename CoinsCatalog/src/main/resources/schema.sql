@@ -1,4 +1,4 @@
-CREATE TABLE coins (
+CREATE TABLE IF NOT EXISTS coins (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(255),
 	code VARCHAR(255) NOT NULL,
@@ -17,12 +17,12 @@ CREATE TABLE coins (
 );
 
 -- in the future use also as Spring Security
-CREATE TABLE users (
+CREATE TABLE IF NOT EXISTS users (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	name VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE collections (
+CREATE TABLE IF NOT EXISTS collections (
 	id INT AUTO_INCREMENT PRIMARY KEY,
 	user_id INT NOT NULL,
 	coin_id INT NOT NULL,

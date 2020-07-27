@@ -9,6 +9,12 @@
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		
 		<link th:href="@{/style.css}" rel="stylesheet" />
+		
+		<script type="text/javascript">
+			function clearSearch() {
+				window.location = "[[@{catalog}]]";
+			}
+		</script>
     </head>
     
 <body class="container">
@@ -23,6 +29,13 @@
    	<div class="row">
        	<h2 class="col-sm-12">KATALOG MONET</h2><br/>
 	</div>
+	
+	<br>
+	<form th:action="@{catalog}">
+		Wyszukiwanie: <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" required /><br>
+		<input type="submit" value="Szukaj">
+		<input type="button" value="Wyczyść" id="btnClear" onClick="clearSearch()" />
+	</form>
 
     <br/><br/>
 	<div class="row">
