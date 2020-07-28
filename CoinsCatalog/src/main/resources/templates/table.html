@@ -30,7 +30,7 @@
 		</div>
 		
 		<br>
-		<form th:action="@{catalog}">
+		<form th:action="@{table}">
 			Wyszukiwanie: <input type="text" name="keyword" id="keyword" size="50" th:value="${keyword}" required /><br>
 			<input type="submit" value="Szukaj">
 			<input type="button" value="Wyczyść" id="btnClear" onClick="clearSearch()" />
