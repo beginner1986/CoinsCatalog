@@ -14,21 +14,20 @@ import pl.beginner.service.CoinService;
 
 @Log4j2
 @Controller
-public class CatalogController {
+public class TableController {
 
 	@Autowired
 	CoinService service;
 	
-	@GetMapping("/catalog")
-	public String catalog(Model model, @Param("keyword") String keyword) {
+	@GetMapping("/table")
+	public String table(Model model, @Param("keyword") String keyword) {
 		
-		log.info("Catalog page visited.");
+		log.info("Catalog in table view visited.");
 		
 		List<Coin> coins = service.listAll(keyword);
 		model.addAttribute("coins", coins);
 		model.addAttribute("keyword", keyword);
 		
-		return "catalog";
+		return "table";
 	}
-	
 }
