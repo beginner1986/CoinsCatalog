@@ -36,6 +36,11 @@
 		<input type="submit" value="Szukaj">
 		<input type="button" value="Wyczyść" id="btnClear" onClick="clearSearch()" />
 	</form>
+    <br/><br/>
+
+	<div th:each="link : ${links}">
+		<a th:href="${link.value}" th:text="${link.key}"></a><br>
+	</div>
 
     <br/><br/>
 	<div class="row">
@@ -46,9 +51,7 @@
 		        	<h3 th:text="${coin.name}"></h3>
 		        	<hr>
 		        	<div class="row">
-		        	<!-- 
 			        	<img th:src="@{https://katalogfischer.pl/} + ${coin.photo}" class="col-sm-4 h-100"/>
-		        	 -->
 			        	<div class="col-sm-4 column">
 			        		<div>Kod: <strong th:text="${coin.code}"></strong></div>
 			        		<div>Rok: <strong th:text="${coin.year}"></strong></div>
